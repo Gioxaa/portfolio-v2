@@ -16,10 +16,12 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   interactive?: boolean;
   /** Proximity detection radius */
   proximityRadius?: number;
+  /** Visual variant of the card */
+  variant?: "default" | "glass";
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, interactive = false, proximityRadius = 300, children, ...props }, ref) => {
+  ({ className, interactive = false, proximityRadius = 300, variant = "default", children, ...props }, ref) => {
     const proximityRef = useProximity<HTMLDivElement>({
       radius: proximityRadius,
       active: interactive,
@@ -40,11 +42,15 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={interactive ? mergedRef : ref}
         className={cn(
-          "relative overflow-hidden rounded-[--radius-lg] border border-[hsl(var(--color-border))]",
-          "bg-[hsl(var(--color-surface))]",
-          "transition-all duration-[--duration-normal]",
+          "relative overflow-hidden rounded-[--radius-lg] transition-all duration-[--duration-normal]",
+          variant === "default" && "bg-[hsl(var(--color-surface))] border border-[hsl(var(--color-border))]",
+          variant === "glass" && [
+            "glass",
+            "shadow-[inset_0_1px_0_0_hsl(var(--color-text)/0.05)]",
+          ],
           interactive && !reducedMotion && [
             "proximity-field",
+            "will-change-transform",
             // Subtle transform based on proximity
             "[transform:perspective(1000px)_rotateX(calc(var(--py)*-2deg))_rotateY(calc(var(--px)*2deg))_translateZ(calc(var(--pd)*5px))]",
             // Border glow on proximity
