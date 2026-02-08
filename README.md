@@ -29,7 +29,7 @@ Personal portfolio website showcasing my projects, skills, and journey as a self
 
 ```bash
 # Clone the repo
-git clone https://github.com/Gioxaa/portfolio.git
+git clone https://github.com/Gioxaa/portfolio-v2.git
 
 # Install dependencies
 pnpm install
@@ -62,6 +62,6 @@ MIT License — feel free to use this as a template for your own portfolio.
 
 ---
 
-**Live Demo:** [Coming Soon]
+**Live Demo:** https://portfolio-v2-mauve-kappa.vercel.app/
 
 **Contact:** [freyrey222@gmail.com](mailto:freyrey222@gmail.com)

@@ -331,6 +331,15 @@ export const profile: ProfileData = {
       githubUrl: "https://github.com/Gioxaa/WarrantyAndStockBot-Discord",
     },
     {
+      slug: "portfolio-v2",
+      title: "Portfolio Website",
+      description: "Portfolio v2 built with Next.js App Router, Radix UI, and Framer Motion. Features dark/light theme, accessibility compliance, and WCAG 2.1 accessibility compliance.",
+      tags: ["Next.js", "TypeScript", "Radix UI", "Framer Motion", "Tailwind CSS"],
+      featured: true,
+      year: 2026,
+      githubUrl: "https://github.com/Gioxaa/portfolio-v2.git",
+    },
+    {
       slug: "growtopia-checker",
       title: "Growtopia Online Checker",
       description: "Python script to monitor online players in Growtopia and send notifications to Discord via webhook. Useful for server uptime monitoring.",

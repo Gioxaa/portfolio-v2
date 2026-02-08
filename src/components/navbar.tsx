@@ -96,7 +96,7 @@ export function Navbar() {
               className="flex items-center gap-2 text-lg font-bold tracking-tight hover:text-[hsl(var(--color-accent))] transition-colors"
             >
               <IconTerminal size={20} className="text-[hsl(var(--color-accent))]" />
-              <span>MR</span>
+              <span>root@frey</span>
             </a>
 
             {/* Desktop Navigation */}
