@@ -18,6 +18,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
+        aria-disabled={props.disabled}
         className={cn(
           // Base styles
           "inline-flex items-center justify-center gap-2",

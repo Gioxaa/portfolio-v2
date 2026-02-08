@@ -61,6 +61,7 @@ export const MagneticButton = React.forwardRef<HTMLButtonElement, MagneticButton
         className={cn("will-change-transform", className)}
         style={{ ...style, ...transformStyle }}
         disabled={disabled}
+        aria-disabled={disabled}
         {...props}
       />
     );

@@ -40,6 +40,14 @@ export function CertificatesSection() {
             <Card
               className="cursor-pointer hover:border-[hsl(var(--color-accent)/0.5)] transition-colors h-full"
               onClick={() => setSelectedCert(cert)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setSelectedCert(cert);
+                }
+              }}
             >
               <CardContent className="p-4">
                 <div className="w-10 h-10 rounded-[--radius-lg] bg-[hsl(var(--color-accent-subtle))] flex items-center justify-center mb-3">

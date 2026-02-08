@@ -54,7 +54,7 @@ export function HeroSection() {
   };
 
   return (
-    <Section sectionId="home" flush className="min-h-screen flex items-center relative overflow-hidden">
+    <Section sectionId="home" flush className="min-h-screen flex items-center relative overflow-hidden" aria-label="Introduction">
       {/* Background accent */}
       <div
         ref={accentRef}
