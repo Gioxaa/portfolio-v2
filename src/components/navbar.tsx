@@ -13,7 +13,7 @@ import { useActiveSection } from "@/hooks/use-active-section";
 import { useTheme } from "@/hooks/use-theme";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { IconSun, IconMoon, IconMenu, IconX } from "@/components/ui/icons";
+import { IconSun, IconMoon, IconMenu, IconX, IconTerminal } from "@/components/ui/icons";
 import { navItems, sectionIds } from "@/content/profile";
 
 export function Navbar() {
@@ -93,9 +93,10 @@ export function Navbar() {
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, "home")}
-              className="text-lg font-bold tracking-tight hover:text-[hsl(var(--color-accent))] transition-colors"
+              className="flex items-center gap-2 text-lg font-bold tracking-tight hover:text-[hsl(var(--color-accent))] transition-colors"
             >
-              MR
+              <IconTerminal size={20} className="text-[hsl(var(--color-accent))]" />
+              <span>MR</span>
             </a>
 
             {/* Desktop Navigation */}

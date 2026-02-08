@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
-import { MotionProvider } from "@/components/motion-provider";
 import { NoiseOverlay } from "@/components/ui/noise-overlay";
-import { ScrollToTop } from "@/components/scroll-to-top";
-import { DebugPanel } from "@/components/debug-panel";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -42,6 +37,10 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Root Layout - Base HTML structure only
+ * Navbar/Footer handled by (main) route group layout
+ */
 export default function RootLayout({
   children,
 }: {
@@ -54,13 +53,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col">
-        <MotionProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <ScrollToTop />
-          <DebugPanel />
-        </MotionProvider>
+        {children}
         <NoiseOverlay />
       </body>
     </html>

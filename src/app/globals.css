@@ -357,8 +357,18 @@ body {
 
 @media print {
   @page {
-    size: letter;
-    margin: 0.5in;
+    size: A4;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+
+  /* Remove browser headers/footers by using margin: 0 and adding our own padding */
+  @page :first {
+    margin-top: 10mm;
+  }
+
+  html, body {
+    height: auto !important;
+    overflow: visible !important;
   }
 
   body {
@@ -372,15 +382,9 @@ body {
     display: none !important;
   }
   
+  /* Don't append URLs to links in print (cleaner) */
   a[href]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-    color: #666;
-  }
-  
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
+    content: none !important;
   }
 }
 

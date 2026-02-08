@@ -27,7 +27,7 @@ export default function ResumePage() {
             {profile.personal.socialLinks.map((link) => (
               <a
                 key={link.platform}
-                href={link.url}
+                href={link.platform === "email" ? `mailto:${link.url}` : link.url}
                 className="text-blue-600 hover:underline print:text-gray-700 print:no-underline"
                 rel="noopener noreferrer"
               >
@@ -46,7 +46,7 @@ export default function ResumePage() {
             {profile.personal.bio}
           </p>
           <p className="text-sm text-gray-600 mt-2 print:text-gray-700">
-            {yearsExperience}+ years of professional experience
+            {yearsExperience}+ years of self-taught journey in technology
           </p>
         </section>
 
@@ -99,7 +99,7 @@ export default function ResumePage() {
                     {edu.institution}
                   </h3>
                   <p className="text-gray-600 print:text-gray-700">
-                    {edu.degree} in {edu.field}
+                    {edu.degree}{edu.field ? ` — ${edu.field}` : ""}
                   </p>
                 </div>
                 <span className="text-sm text-gray-500 print:text-gray-600">
@@ -109,6 +109,35 @@ export default function ResumePage() {
             ))}
           </div>
         </section>
+
+        {/* Organizations */}
+        {profile.organizations.length > 0 && (
+          <section className="mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3 uppercase tracking-wide border-b border-gray-200 pb-1 print:text-black print:border-gray-400">
+              Organizations & Leadership
+            </h2>
+            <div className="space-y-4">
+              {profile.organizations.map((org, index) => (
+                <div key={index} className="print:break-inside-avoid">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-semibold text-gray-900 print:text-black">
+                        {org.role}
+                      </h3>
+                      <p className="text-gray-600 print:text-gray-700">{org.name}</p>
+                    </div>
+                    <span className="text-sm text-gray-500 print:text-gray-600 whitespace-nowrap">
+                      {org.startDate} – {org.endDate || "Present"}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-700 mt-1 print:text-gray-800">
+                    {org.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Skills */}
         <section className="mb-6">
@@ -158,6 +187,26 @@ export default function ResumePage() {
           </ul>
         </section>
 
+        {/* Bug Hunting / Security Research */}
+        {profile.bugHunting.length > 0 && (
+          <section className="mb-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3 uppercase tracking-wide border-b border-gray-200 pb-1 print:text-black print:border-gray-400">
+              Security Research
+            </h2>
+            <div className="space-y-2 text-sm">
+              {profile.bugHunting.map((bug) => (
+                <div key={bug.id} className="flex justify-between items-start print:break-inside-avoid">
+                  <div>
+                    <span className="font-medium text-gray-900 print:text-black">{bug.title}</span>
+                    <span className="text-gray-500 ml-2">({bug.severity.toUpperCase()})</span>
+                  </div>
+                  <span className="text-gray-500 print:text-gray-600">{bug.date}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* Print Button - Hidden in Print */}
         <div className="mt-8 text-center print:hidden">
           <button
@@ -167,7 +216,7 @@ export default function ResumePage() {
             Print Resume
           </button>
           <p className="text-sm text-gray-500 mt-2">
-            Use Ctrl+P / Cmd+P for best results
+            Tip: In print dialog, disable &quot;Headers and footers&quot; for clean output
           </p>
         </div>
       </Container>

@@ -1,6 +1,6 @@
-# Enterprise Portfolio
+# Portfolio
 
-An enterprise-grade portfolio web application built with Next.js 16, featuring a custom motion engine, token-based design system, and security hardening.
+Portfolio web application built with Next.js 16, featuring a custom motion engine, token-based design system, and security hardening.
 
 ## Features
 

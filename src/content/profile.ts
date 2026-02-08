@@ -139,6 +139,7 @@ export const profile: ProfileData = {
     title: "Cybersecurity Enthusiast",
     roles: [
       "Backend Developer",
+      "Cloud & Infrastructure Management",
       "Bug Bounty Hunter",
       "Cybersecurity Enthusiast",
     ],
@@ -160,7 +161,7 @@ export const profile: ProfileData = {
       },
       {
         platform: "linkedin",
-        url: "https://www.linkedin.com/in/muhammad-reyhan-1b3b3b3b3/",
+        url: "https://www.linkedin.com/in/muhammad-reyhan-gx/",
         label: "LinkedIn",
       },
     ],
