@@ -21,7 +21,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, interactive = false, proximityRadius = 300, variant = "default", children, ...props }, ref) => {
+  ({ className, interactive = false, proximityRadius = 300, variant = "default", children, role = "article", ...props }, ref) => {
     const proximityRef = useProximity<HTMLDivElement>({
       radius: proximityRadius,
       active: interactive,
@@ -41,6 +41,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         ref={interactive ? mergedRef : ref}
+        role={role}
         className={cn(
           "relative overflow-hidden rounded-[--radius-lg] transition-all duration-[--duration-normal]",
           variant === "default" && "bg-[hsl(var(--color-surface))] border border-[hsl(var(--color-border))]",
@@ -51,10 +52,13 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
           interactive && !reducedMotion && [
             "proximity-field",
             "will-change-transform",
+            "touch-manipulation",
             // Subtle transform based on proximity
             "[transform:perspective(1000px)_rotateX(calc(var(--py)*-2deg))_rotateY(calc(var(--px)*2deg))_translateZ(calc(var(--pd)*5px))]",
             // Border glow on proximity
             "[box-shadow:0_0_calc(var(--pd)*30px)_hsl(var(--color-accent)/calc(var(--pd)*0.15))]",
+            // Enhanced feedback on touch
+            "[&.is-touched]:border-[hsl(var(--color-accent)/0.5)]",
           ],
           className
         )}
