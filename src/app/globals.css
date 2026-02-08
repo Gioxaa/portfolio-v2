@@ -123,6 +123,13 @@
   --my: 0;
   --mv: 0;
   --scroll-progress: 0;
+
+  /* ---------- Glassmorphism Tokens ---------- */
+  --glass-blur: 12px;
+  --glass-saturation: 180%;
+  --glass-opacity: 0.15;
+  --glass-border-opacity: 0.2;
+  --glass-shadow-opacity: 0.25;
 }
 
 /* Light theme */
@@ -287,6 +294,22 @@ body {
 /* ==========================================================================
    MOTION UTILITY CLASSES
    ========================================================================== */
+
+/* Glassmorphism effects */
+.glass {
+  background: hsl(var(--color-bg-elevated) / var(--glass-opacity));
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturation));
+  border: 1px solid hsl(var(--color-border-strong) / var(--glass-border-opacity));
+  box-shadow: 0 8px 32px 0 hsl(0 0% 0% / var(--glass-shadow-opacity));
+}
+
+.glass-subtle {
+  background: hsl(var(--color-bg-elevated) / calc(var(--glass-opacity) * 0.5));
+  backdrop-filter: blur(calc(var(--glass-blur) * 0.5)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) * 0.5)) saturate(var(--glass-saturation));
+  border: 1px solid hsl(var(--color-border) / var(--glass-border-opacity));
+}
 
 /* Proximity-reactive element (values set by motion engine) */
 .proximity-field {
