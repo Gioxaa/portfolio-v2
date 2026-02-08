@@ -77,7 +77,7 @@ export function CertificatesSection() {
               initial={reducedMotion ? { opacity: 1 } : { opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={reducedMotion ? { opacity: 0 } : { opacity: 0 }}
-              className="fixed inset-0 z-[--z-overlay] bg-[hsl(0_0%_0%/0.8)]"
+              className="fixed inset-0 z-[var(--z-overlay)] bg-[hsl(0_0%_0%/0.8)]"
               onClick={() => setSelectedCert(null)}
             />
 
@@ -87,7 +87,7 @@ export function CertificatesSection() {
               animate={{ opacity: 1, scale: 1 }}
               exit={reducedMotion ? {} : { opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-[--z-modal] md:max-w-lg md:w-full"
+              className="fixed inset-4 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-[var(--z-modal)] md:max-w-lg md:w-full"
             >
               <Card className="h-full md:h-auto overflow-auto">
                 <CardContent className="p-6">
