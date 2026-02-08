@@ -70,7 +70,7 @@ export function BugHuntingSection() {
       </Reveal>
 
       {/* Entries */}
-      <div className="space-y-4">
+      <div className="space-y-6">
         {sortedEntries.map((entry, index) => (
           <Reveal key={entry.id} delay={0.1 + index * 0.05}>
             <Card>

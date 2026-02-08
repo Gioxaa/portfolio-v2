@@ -95,7 +95,7 @@ export function Navbar() {
               onClick={(e) => handleNavClick(e, "home")}
               className="text-lg font-bold tracking-tight hover:text-[hsl(var(--color-accent))] transition-colors"
             >
-              AC
+              MR
             </a>
 
             {/* Desktop Navigation */}

@@ -44,3 +44,15 @@ next-env.d.ts
 /.sisyphus
 /.logs
 /.cache
+
+# logs
+/logs
+
+# temp files
+*.html.tmp
+formatted_*.html
+scraped_*.html
+
+# test artifacts
+/test-results
+/playwright-report

@@ -29,7 +29,7 @@ export function ProjectsSection() {
       title="Works & Projects"
       subtitle="A selection of projects I've built, from security tools to infrastructure automation."
     >
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-fr grid-flow-dense">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-fr grid-flow-dense">
         {projects.map((project, index) => {
           const isFeatured = project.featured;
           
@@ -48,7 +48,7 @@ export function ProjectsSection() {
                 variant={isFeatured ? "glass" : "default"}
                 className="h-full flex flex-col"
               >
-                <CardContent className={cn("flex-grow", isFeatured ? "p-6" : "p-5")}>
+                <CardContent className={cn("flex-grow", isFeatured ? "p-6" : "p-4")}>
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <h4 className={cn("font-semibold", isFeatured ? "text-xl" : "text-lg")}>
                       {project.title}

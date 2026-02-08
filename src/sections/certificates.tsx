@@ -34,7 +34,7 @@ export function CertificatesSection() {
       subtitle="Professional certifications validating expertise across security, cloud, and infrastructure domains."
     >
       {/* Certificate Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {profile.certificates.map((cert, index) => (
           <Reveal key={cert.id} delay={index * 0.05}>
             <Card

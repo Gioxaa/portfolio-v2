@@ -10,31 +10,31 @@ import { DebugPanel } from "@/components/debug-panel";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Alex Chen | Systems Builder & Security Researcher",
+  title: "Muhammad Reyhan | Self-taught Developer & Security Enthusiast",
   description:
-    "Building secure, scalable systems at the intersection of software engineering and cybersecurity. Full-stack developer, security researcher, and DevOps engineer.",
+    "Self-taught developer passionate about programming, cybersecurity, and prompt engineering. Building tools and exploring the intersection of AI and security.",
   keywords: [
-    "software engineer",
-    "security researcher",
-    "full-stack developer",
+    "self-taught developer",
+    "security enthusiast",
+    "prompt engineering",
     "cybersecurity",
-    "devops",
     "portfolio",
+    "indonesia",
   ],
-  authors: [{ name: "Alex Chen" }],
+  authors: [{ name: "Muhammad Reyhan" }],
   openGraph: {
     type: "website",
-    locale: "en_US",
-    title: "Alex Chen | Systems Builder & Security Researcher",
+    locale: "id_ID",
+    title: "Muhammad Reyhan | Self-taught Developer & Security Enthusiast",
     description:
-      "Building secure, scalable systems at the intersection of software engineering and cybersecurity.",
-    siteName: "Alex Chen Portfolio",
+      "Self-taught developer passionate about programming, cybersecurity, and prompt engineering.",
+    siteName: "Muhammad Reyhan Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alex Chen | Systems Builder & Security Researcher",
+    title: "Muhammad Reyhan | Self-taught Developer & Security Enthusiast",
     description:
-      "Building secure, scalable systems at the intersection of software engineering and cybersecurity.",
+      "Self-taught developer passionate about programming, cybersecurity, and prompt engineering.",
   },
   robots: {
     index: true,
